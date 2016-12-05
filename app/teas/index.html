@@ -1,0 +1,33 @@
+<header class="filter-box box">
+  <select ng-model="$ctrl.filters.order" ng-change="$ctrl.update()">
+    <option value="created_at_desc">Newest</option>
+    <option value="created_at_asc">Oldest</option>
+    <option value="price_asc">Lowest price</option>
+    <option value="price_desc">Highest price</option>
+    <option value="name_asc">Name A-Z</option>
+    <option value="name_desc">Name Z-A</option>
+  </select>  
+  <form>
+    <div class="input-group">
+      <label>Price from:</label>
+      <input type="text" ng-model="$ctrl.filters.price_from"/>
+      <label>to</label>
+      <input type="text" ng-model="$ctrl.filters.price_to"/>
+    </div>
+    <div class="input-group">
+      <label>Quantity:</label>
+      <input type="text" ng-model="$ctrl.filters.quantity_from"/>
+    </div>
+    <button ng-click="$ctrl.update()">Apply filters</button>
+  </form>
+</header>
+
+<section class="box">
+  <div class="empty" ng-if="$ctrl.teas.length == 0">
+    No teas found :(
+    <br/>
+    Try widening your search
+  </div>
+
+  <tea-list teas="$ctrl.teas"></tea-list>
+</section>

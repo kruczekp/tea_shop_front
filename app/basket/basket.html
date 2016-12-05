@@ -1,0 +1,16 @@
+<header class="box">
+  Basket
+</header>
+
+<section class="box">
+  <div class="empty" ng-if="$ctrl.teas.length == 0">
+    Your basket is empty
+    <br/>
+    <a href="#!/teas">Fill it up!</a>
+  </div>
+  <tea-list teas="$ctrl.teas"></tea-list>
+</section>
+
+<footer class="box" ng-if="$ctrl.teas.length > 0">
+  <a ng-click="$ctrl.destroy()">Clear basket</a>
+</footer>

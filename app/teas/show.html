@@ -1,0 +1,14 @@
+<div id="product">
+  <section class="box">
+    <img src="{{$ctrl.tea.image}}"/>
+    <div class="description">{{$ctrl.tea.description}}</div>
+  </section>
+  <aside class="box">
+    <div class="separator">{{$ctrl.tea.name}}</div>    
+    <div class="separator">Price: ${{$ctrl.tea.price}}</div>
+    <div class="separator">Available: {{$ctrl.tea.quantity}}</div>
+    <div class="separator">
+      <a ng-click="$ctrl.addToBasket()">Add to basket</a>
+    </div>
+  </aside>
+</div>
